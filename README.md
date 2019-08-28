@@ -40,7 +40,7 @@ Things you may want to cover:
 |group_name|string|null: false|
 
 ### Association
-- has_many :message
+- has_many :messages
 - has_many :users, through: :groups_users
 
 ## mssageテーブル
