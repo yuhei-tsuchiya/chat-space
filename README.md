@@ -47,10 +47,10 @@ Things you may want to cover:
 ## mssagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|foreign_key: true|
-|image|string|foreign_key: true|
-|user_id|string|null: false|
-|group_id|string|null: false|
+|text|text|
+|image|string|
+|user_id|string|null: false, foreign_key: true|
+|group_id|string|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
