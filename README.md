@@ -47,7 +47,8 @@ Things you may want to cover:
 ## mssagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false, foreign_key: true|
+|text|text|
+|image|string|
 |user_id|string|null: false|
 |group_id|string|null: false|
 
