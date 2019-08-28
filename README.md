@@ -53,8 +53,8 @@ Things you may want to cover:
 |group_id|string|null: false|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 ## groups_usersテーブル
 
