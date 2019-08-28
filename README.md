@@ -31,7 +31,7 @@ Things you may want to cover:
 |password|string|null: false, unique: true|
 
 ### Association
-- has_many :group
+- has_many :groups, through: :groups_users
 - has_many :message
 
 ## groupsテーブル
