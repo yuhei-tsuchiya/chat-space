@@ -1,0 +1,62 @@
+.flash-box
+.wrapper
+  .side-menu
+    .side-menu__header
+
+      .side-menu__header__group
+
+        .side-menu__header__group__name
+          土屋悠平
+        .side-menu__header__group__rigth
+
+          .side-menu__header__group__rigth__new
+            = link_to "#", class: "side-menu__header__group__rigth__new__icon" do
+              %i.fa.fa-edit.fa-fw
+
+          .side-menu__header__group__rigth__edit
+            = link_to "$", class: "side-menu__header__group__rigth__edit__icon" do
+              %i.fa.fa-cog
+
+    .side-menu__contents
+      .side-menu__contents__groups
+        %p.side-menu__contents__groups__group
+          カミケンさんを崇め隊
+
+        %p.side-menu__contents__groups__text
+          話せ！！！離せ！！！！
+
+
+  .chat-main
+    .main-header
+      .main-header__left-box
+        .main-header__left-box__group-name
+          かみけんさんを崇め隊
+        .main-header__left-box__member
+          member: ゆうへい
+
+      = link_to "&", class: "edit-link" do
+        .main-header__edit
+          Edit
+
+
+    .messages
+      .messages__top-box
+        .messages__top-box__name
+          ゆーへい
+        .messages__top-box__date
+          2019/9/2
+      .messages__text-box
+        .messages__text-box__text
+          ソロソロ疲れてきた
+
+    .form
+      %form.new_message{action: "#",  method: "post"}
+        .input-box
+          %input.message_content.input-box__text{:placeholder => "type a message", :type => "text"}
+          %label.input-box__image
+            %i.fa.fa-image
+            %input.message_image.input-box__image__file{type: "file"}
+        %input.submit-btn{type: "submit", value: "Send"}
+
+
+
