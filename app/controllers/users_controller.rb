@@ -20,4 +20,3 @@ private
   def user_params
     params.require(:user).permit(:name, :email)  #edit画面で入力された名前とメールアドレス
   end
-end
