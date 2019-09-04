@@ -10,7 +10,7 @@
         .side-menu__header__group__rigth
 
           .side-menu__header__group__rigth__new
-            = link_to "#", class: "new__icon" do
+            = link_to new_group_path, class: "new__icon" do
               %i.fa.fa-edit.fa-fw
 
           .side-menu__header__group__rigth__edit
@@ -19,10 +19,12 @@
 
     .side-menu__contents
       .side-menu__contents__groups
-        %p.side-menu__contents__groups__group
-          カミケンさんを崇め隊
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group), class: "kamiya" do
+            .side-menu__contents__groups__group
+              = group.name
 
-        %p.side-menu__contents__groups__text
+          %p.side-menu__contents__groups__text
           話せ！！！離せ！！！！
 
 

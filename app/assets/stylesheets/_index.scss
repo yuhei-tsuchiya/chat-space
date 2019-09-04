@@ -47,8 +47,13 @@
       overflow: scroll;
       box-sizing: border-box;
 
+
       &__groups{
         margin-bottom: 40px;
+
+        .kamiya{
+          text-decoration: none ;
+        }
 
         &__group{
           font-size: 15px;
@@ -62,9 +67,11 @@
           font-weight: bold;
           color: #ffffff
         }
+
       }
     }
   }
+
 
   .chat-main{
     width: calc(100vw - 300px);
@@ -192,3 +199,4 @@
 
   }
 }
+
