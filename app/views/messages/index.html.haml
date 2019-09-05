@@ -1,61 +1,46 @@
 .flash-box
 .wrapper
-  .side-menu
-    .side-menu__header
-
-      .side-menu__header__group
-
-        .side-menu__header__group__name
-          = current_user.name              #今ログインしている奴の名前
-        .side-menu__header__group__rigth
-
-          .side-menu__header__group__rigth__new
-            = link_to new_group_path, class: "new__icon" do
-              %i.fa.fa-edit.fa-fw
-
-          .side-menu__header__group__rigth__edit
-            = link_to edit_user_path(current_user), class: "edit__icon" do
-              %i.fa.fa-cog
-
-    .side-menu__contents
-      .side-menu__contents__groups
-        - current_user.groups.each do |group|
-          = link_to group_messages_path(group), class: "kamiya" do
-            .side-menu__contents__groups__group
-              = group.name
-
-          %p.side-menu__contents__groups__text
-          話せ！！！離せ！！！！
-
+  = render 'groups/side-bar'
 
   .chat-main
     .main-header
       .main-header__left-box
         .main-header__left-box__group-name
-          かみけんさんを崇め隊
+          = @group.name
         .main-header__left-box__member
-          member: ゆうへい
-
-      = link_to "&", class: "edit-link" do
+          member:
+          - @group.users.each do|user|
+            = user.name
+      = link_to edit_group_path(params[:group_id]), class: "edit-link" do
         .main-header__edit
           Edit
 
 
     .messages
-      .messages__top-box
-        .messages__top-box__name
-          ゆーへい
-        .messages__top-box__date
-          2019/9/2
-      .messages__text-box
-        .messages__text-box__text
-          ソロソロ疲れてきた
+      = render @messages
+      -# .messages__top-box
+      -#   .messages__top-box__name
+      -#     ゆーへい
+      -#   .messages__top-box__date
+      -#     2019/9/2
+      -# .messages__text-box
+      -#   .messages__text-box__text
+      -#     ソロソロ疲れてきた
+
+    -# .form
+    -#   %form.new_message{action: "#",  method: "post"}
+    -#     .input-box
+    -#       %input.message_content.input-box__text{placeholder: "type a message", type: "text"}
+    -#       %label.input-box__image
+    -#         %i.fa.fa-image
+    -#         %input.message_image.input-box__image__file{type: "file"}
+    -#     %input.submit-btn{type: "submit", value: "Send"}
 
     .form
-      %form.new_message{action: "#",  method: "post"}
+      = form_for [@group, @message] do |f|
         .input-box
-          %input.message_content.input-box__text{placeholder: "type a message", type: "text"}
-          %label.input-box__image
-            %i.fa.fa-image
-            %input.message_image.input-box__image__file{type: "file"}
-        %input.submit-btn{type: "submit", value: "Send"}
+          = f.text_field :content, class: 'message_content input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'input-box__image' do
+            = fa_icon 'picture-o', class: 'fa fa-image'
+            = f.file_field :image, class: 'message_image input-box__image__file'
+        = f.submit 'Send', class: 'submit-btn'

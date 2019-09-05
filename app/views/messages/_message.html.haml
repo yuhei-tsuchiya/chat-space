@@ -1,0 +1,19 @@
+.messages__top-box
+  .messages__top-box__name
+    = message.user.name
+  .upper-message__date
+    = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .messages__text-box
+    - if message.content.present?
+      %p.messages__text-box__text
+        = message.content
+    = image_tag message.image.url, class: 'messages__text-box__image' if message.image.present?
+
+-# .messages__top-box
+  -#   .messages__top-box__name
+  -#     ゆーへい
+  -#   .messages__top-box__date
+  -#     2019/9/2
+  -# .messages__text-box
+  -#   .messages__text-box__text
+  -#     ソロソロ疲れてきた
