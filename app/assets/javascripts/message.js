@@ -40,8 +40,8 @@ $(function(){
       contentType: false
     })
 
-    .done(function(data){
-      var html = buildHTML(data);
+    .done(function(message){
+      var html = buildHTML(message);
       $('.messages').append(html)
       $('#message_content').val('');
       $('#message_image').val('');
