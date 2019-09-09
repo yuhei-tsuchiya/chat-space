@@ -44,6 +44,7 @@ $(function(){
       var html = buildHTML(message);
       $('.messages').append(html)
       $('.message_content.input-box__text').val('');
+      $('.message_content.input-box__text')[0].reset();
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'slow');
     })
     .fail(function(){
