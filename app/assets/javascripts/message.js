@@ -40,10 +40,11 @@ $(function(){
       contentType: false
     })
 
-    .done(function(message){
-      var html = buildHTML(message);
+    .done(function(data){
+      var html = buildHTML(data);
       $('.messages').append(html)
-      $('.message_content.input-box__text')[0].reset();
+      $('#message_content').val('');
+      $('#message_image').val('');
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'slow');
     })
     .fail(function(){
