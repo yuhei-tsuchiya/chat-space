@@ -85,15 +85,19 @@ li {
   line-height: 50px;
   font-size: 14px;
   border-bottom: 1px solid #ddd;
+  justify-content: space-between;
+
   &:after {
     content: "";
     clear: both;
     display: block;
+
   }
   &__name {
     float: left;
   }
   &__btn {
+    float: right;
 
     display: inline-block;
     cursor: pointer;
