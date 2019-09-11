@@ -67,7 +67,7 @@ $(function(){
     })
 
     .done(function(messages) {
-        console.log(messages)
+
       messages.forEach(function( message ) {
         var html =""
         html = buildHTML(message);
