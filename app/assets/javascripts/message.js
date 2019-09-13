@@ -31,6 +31,7 @@ $(function(){
     var url = $(this).attr('action');
     $('.submit-btn').removeAttr('data-disable-with');
 
+
     $.ajax({
       url: url,
       type: "POST",
